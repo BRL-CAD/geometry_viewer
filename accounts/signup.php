@@ -27,7 +27,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<?php include 'include/header.php'; ?>
+<?php include_once('include/header.php'); ?>
         <?php
             $userAccountExists = $_GET['userExists'];
             if ($userAccountExists == "yes") {

@@ -22,9 +22,9 @@
  *
  */
 
-include 'accounts/auth.php';
-include 'variables.php';
-include 'config.php';
+require_once('accounts/auth.php');
+require_once('variables.php');
+require_once('config.php');
 ?>
 
 <!doctype html>

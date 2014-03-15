@@ -32,9 +32,9 @@
 </head>
 
 <?php
-    include 'include/db.php';
-    include 'include/header.php';
-    include '../config.php';
+    require_once('include/db.php');
+    include_once('include/header.php');
+    require_once('../config.php');
 
     /** check if the form has been submitted */
     if (isset($_POST['signup'])) {

@@ -21,9 +21,9 @@
 /** @file geometry_viewer/upload_file.php
  *
  */
-    include 'accounts/auth.php';
-    include 'functions.php';
-    include 'config.php';
+    require_once('accounts/auth.php');
+    require_once('functions.php');
+    require_once('config.php');
 
     /** 
      * This variable hold 1, if upload completes, 2 if 

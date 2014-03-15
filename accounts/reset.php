@@ -28,8 +28,8 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php
-    include 'include/db.php';
-    include 'include/header.php';
+    require_once('include/db.php');
+    include_once('include/header.php');
 
     session_start();
     $token = $_GET['token'];

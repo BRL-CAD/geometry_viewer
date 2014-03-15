@@ -28,12 +28,12 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <?php 
-    include 'include/header.php';
-    include 'include/db.php';
-    include '../config.php';
+    include_once('include/header.php');
+    require_once('include/db.php');
+    require_once('../config.php');
 
     /** Swift Mailer Library. */
-    include 'include/swift/swift_required.php';
+    require_once('include/swift/swift_required.php');
 
     if(!isset($_GET['email'])) {
         echo "<br>";

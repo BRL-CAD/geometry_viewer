@@ -22,9 +22,9 @@
  *
  */
 
-    include 'accounts/auth.php';
-    include 'functions.php';
-    include 'config.php';
+    require_once('accounts/auth.php');
+    require_once('functions.php');
+    require_once('config.php');
 
     $dbFileName = $_POST['db'];
     $entity = $_POST['en'];
