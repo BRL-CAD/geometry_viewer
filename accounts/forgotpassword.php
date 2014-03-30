@@ -34,7 +34,13 @@
 
     /** Swift Mailer Library. */
     include 'include/swift/swift_required.php';
-
+    if(!file_exists('include/swift/swift_required.php'){?>
+	<div class="alert alert-danger">
+		Swift library is missing.  
+	</div>
+   <?php exit(); 
+	} 
+ 
     if(!isset($_GET['email'])) {
         echo "<br>";
         echo'<h3 style="text-align: center">Reset Your Password</h3>';
@@ -98,7 +104,8 @@
     <a href="'.$siteUrl.'geometry_viewer/accounts/reset.php?token='.$token.'">'.$siteUrl.'geometry_viewer/accounts/reset.php?token='.$token.' </a><br><br>Have a nice day!', 'text/html');
 
     /** Send email */
-    if ($mailer->send($message)) {			
+    if ($mailer->send($message)) {		
+	echo "MIKE 123";	
 	echo "<div id=\"alert-msge\" class=\"alert alert-success\"> 
                  Password reset link has been sent your email address. 
             </div>";	
