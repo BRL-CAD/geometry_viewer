@@ -27,7 +27,18 @@
 
     /** Path of directory where OBJ files stored. */
     $objPath = "user_accounts/$username/obj";
- 
+
+    /** Giving errors if the paths do not exist **/
+    if(!file_exists($uploadPath)){ ?>
+        <div class="alert alert-danger">
+            Uh Oh! Your account has a problem. There's no folder for your account at our servers. 
+        </div><?php 
+    }
+    else if(!file_exists($objPath)){ ?>
+        <div class="alert alert-danger">
+            Uh Oh! Your account has a problem. There's no folder for obj files in your account. 
+        </div><?php
+    } 
 /*                                                                    
  * Local Variables:                                                   
  * mode: PHP                                                            
