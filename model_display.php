@@ -23,8 +23,6 @@
  */
 
 include 'accounts/auth.php';
-include 'variables.php';
-include 'config.php';
 ?>
 
 <!doctype html>
@@ -69,7 +67,10 @@ include 'config.php';
                     echo "File uploaded: $dbFileName" ?>
             </div>
         </div>
-        
+        <?php 
+        include 'variables.php';
+        include 'config.php';
+        ?>
         <div id="ThreeJS"></div>
 
 	<script>
@@ -420,6 +421,7 @@ include 'config.php';
                  *
                  * TODO: Clean it.
                  */ 
+          <?php  if (!$varErrorExists){ ?>
 		document.write("<div id=\"leftSideBar\" class=\"effect6\"><table><th>Entities:</th>");
                     for (var h = 0; h < totalEntities-1; h++) {
                         if (entitiesList[h] == "_GLOBAL") {
@@ -432,7 +434,7 @@ include 'config.php';
                     }
 		document.write("</table></div>");
             }
-
+        <?php } ?>
             /** Initialization */
 	    init();
 
