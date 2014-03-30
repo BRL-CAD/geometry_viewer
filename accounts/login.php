@@ -63,7 +63,7 @@
             or die(mysql_error());
 
             if(!isset($result)) {
-                echo "query failed";
+                echo "<div class=\"alert alert-danger \"> query failed </div>";
             }
 
             if (mysql_num_rows($result) > 0) {
@@ -81,18 +81,7 @@
                     email ID and / or password not found.
                     </div>";
 
-                echo "<button type=\"submit\" class=\"btn btn-primary\" id=\"alert-msge\" 
-                    name=\"signup\" onClick=\"window.location='signup.php'\">
-                    Sign Up </button>";
 
-
-
-                echo "<button type=\"submit\" class=\"btn btn-success\" id=\"alert-msge\" 
-                    name=\"sign_in\" onClick=\"window.location='login.php'\">
-                    Sign In </button>";
-
-
-                exit();
             }
         }
     }
