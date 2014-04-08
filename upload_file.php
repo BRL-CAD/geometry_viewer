@@ -31,16 +31,21 @@
      */
     $uploadComplete = 0;
 
-    if ($_FILES["file"]["error"] > 0) {
-        echo "Error: " . $_FILES["file"]["error"] . "<br>";
-        $uploadComplete = 0;
-    } else if (file_exists("$uploadPath/" . $_FILES["file"]["name"])) {
-        $uploadComplete = 2;
-    } else {
-        move_uploaded_file($_FILES["file"]["tmp_name"],
-        "$uploadPath/" . $_FILES["file"]["name"]);
-        $uploadComplete = 1;
-    }
+    $fromFileManager = $_POST['fromFileManager']; 
+    if ($fromFileManager != "true"){ 
+        if ($_FILES["file"]["error"] > 0) {
+            echo "Error: " . $_FILES["file"]["error"] . "<br>";
+            $uploadComplete = 0;
+        } else if (file_exists("$uploadPath/" . $_FILES["file"]["name"])) {
+            $uploadComplete = 2;
+        } else {
+            move_uploaded_file($_FILES["file"]["tmp_name"],
+            "$uploadPath/" . $_FILES["file"]["name"]);
+            $uploadComplete = 1;
+        }
+    } else { 
+            $uploadComplete = 2;
+    } 
 
     /** 
      * Holds the names of entities that to be displayed. variable is 
@@ -50,7 +55,11 @@
     $objFileName = NULL;
 
     /** Holds the name of uploaded database file. */
-    $dbFileName = $_FILES["file"]["name"];
+    if ($fromFileManager != "true"){
+        $dbFileName = $_FILES["file"]["name"];
+    } else {
+         $dbFileName = $_POST['dbfilename']; 
+    }
 
     /** 
      * Database file name is splited into its components, i.e. file 
@@ -104,7 +113,7 @@
 	        $redirectionData = $redirectionData."|".$objFileName;
 	    }
         }
-        header('Location: model_display.php?entitiesString='.urlencode($out).'&dbFileName='.urlencode($dbFileName));
+       header('Location: model_display.php?entitiesString='.urlencode($out).'&dbFileName='.urlencode($dbFileName));
     } else if ($uploadComplete == '1') {
         for ($i = 0; $i < $n; $i++) {
             if ($list[$i] == "_GLOBAL") {
@@ -117,7 +126,7 @@
 	        $redirectionData = $redirectionData."|".$objFileName;
 	    }       
         }
-        header('Location: model_display.php?entitiesString='.urlencode($out).'&dbFileName='.urlencode($dbFileName));
+       header('Location: model_display.php?entitiesString='.urlencode($out).'&dbFileName='.urlencode($dbFileName));
     }
 
 /*                                                                    
