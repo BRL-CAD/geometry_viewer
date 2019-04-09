@@ -1,4 +1,4 @@
-geometry_viewer (depriceated) 
+geometry_viewer (deprecated) 
 ===============
 
 **If you are looking for participation in GSoC, or looking for the latest Geometry Viewer, go to https://github.com/BRL-CAD/OGV-meteor**
