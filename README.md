@@ -1,5 +1,7 @@
-geometry_viewer
+geometry_viewer (depriceated) 
 ===============
+
+**If you are looking for participation in GSoC, or looking for the latest Geometry Viewer, go to https://github.com/BRL-CAD/OGV-meteor**
 
 Online BRL-CAD Geometry Viewer is a tool to view BRL-CAD's 
 native CAD (.g format) file on browser. ThreeJS (webGL) is used at 
