@@ -22,8 +22,8 @@
  *
  */
 
-    include 'variables.php';
-    include 'config.php';
+    require_once('variables.php');
+    require_once('config.php');
 
     /** 
      * D I S P L A Y _ L I S T

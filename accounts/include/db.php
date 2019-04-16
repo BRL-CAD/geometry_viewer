@@ -22,7 +22,7 @@
  *
  */
 
-    include '../config.php';
+    require_once('../config.php');
 
     /** Connect to the database. */
     mysql_connect('localhost', $mysqlUsername, $mysqlPassword) or die("Unable to connect to the database, please make sure your MySQL username and / or password is correct!");

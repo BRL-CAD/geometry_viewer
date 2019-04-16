@@ -22,8 +22,8 @@
  *
  */
 
-    include 'include/db.php';
-    include 'include/header.php';
+    require_once('include/db.php');
+    include_once('include/header.php');
     $status = NULL;
 
     /** Check if the $_GET variables are present. */

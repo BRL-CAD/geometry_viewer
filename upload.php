@@ -21,7 +21,7 @@
 /** @file geometry_viewer/upload.php
  *
  */
-    include 'accounts/auth.php';
+    require_once('accounts/auth.php');
 //    include 'variables.php';
 ?>
 
@@ -29,7 +29,7 @@
 <html lang="en">
 
 <?php 
-    include 'header.php'; 
+    include_once('header.php'); 
 ?>
 
         <script src="js/bootstrap.min.js"></script>

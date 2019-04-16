@@ -22,7 +22,7 @@
  *
  */
 
-    include '../config.php';
+    require_once('../config.php');
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
