@@ -1,4 +1,4 @@
-<?php
+<?php		
 /*                     C O N F I G . P H P
  * BRL-CAD
  *
@@ -25,46 +25,49 @@
     /** Title of project. */
     $title = "BRL-CAD Online Geometry Viewer";
 
+	
     /** Domain name of site. e.g. http://brlcad.org/ */
-    $siteUrl = 'http://localhost/~harmanpreet/';
-
-    /** Subject of confirmation e-mail sent on new account creation. */
-    $newAccountSubject = 'Confirmation Link';
-
-    /** Subject of password reset e-mail. */
-    $passwordResetSubject = 'Reset Password';
-
-    /** E-mail address of sender. Currently, it should be gmail address. */
-    $senderEmail = 'yourGmailAccount@gmail.com';
-
-    /** Password of sender's account. */
-    $senderPassword = 'xxxxxxxx';
-
-    /** Name of sender written in emails. */
-    $senderName = 'Online Geometry Viewer';
-
+    $siteUrl = "http://localhost/";
+	
     /** 
      * Path of mged executable file. To check this path on your 
      * system, run this command on terminal: "which mged" 
      * (without quotes).
      */
-    $mgedPath = 'env /usr/brlcad/dev-7.24.1/bin/mged';
+    $mgedPath = "/usr/brlcad/bin/mged";
 
+	
     /**
      * Path of g-obj executable file. To check this path on your 
      * system, run this command on terminal: "which g-obj" 
      * (without quotes).
      */
-    $gobjPath = '/usr/brlcad/dev-7.24.1/bin/g-obj';
-
-    $normTol = '10';
+    $gobjPath = "/usr/brlcad/bin/g-obj";
 
 
     /** MySQL credentials. */
+    $mysqlUsername = " ";
+    $mysqlPassword = " ";
+    $mysqlDatabase = " ";
+			
+    /** Subject of confirmation e-mail sent on new account creation. */
+    $newAccountSubject = "Confirmation Link";
 
-    $mysqlUsername = '';
-    $mysqlPassword = '';
-    $mysqlDatabase = '';
+    /** Subject of password reset e-mail. */
+    $passwordResetSubject = "Reset Passwords";
+		
+    /** E-mail address of sender. Currently, it should be gmail address. */
+    $senderEmail = "yourGmailAccount@gmail.com";
+	
+    /** Name of sender written in emails. */
+    $senderName = "Your Sender Name";
+		
+    /** Password of sender's account. */
+    $senderPassword = "XXXXX";
+	
+    $normTol = '10';	
+	
+    require_once('config-validate.php');
 
 /*                                                                    
  * Local Variables:                                                   

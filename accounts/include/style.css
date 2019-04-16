@@ -67,8 +67,26 @@ margin-right: 10px;
 margin-top: 11px;
 }
 
+#config-error-alert {
+	position:fixed;
+	right:10px;
+	bottom:10px;
+	min-width:300px;
+}
+
+#config-error-alert .btn{
+	float:right;
+	margin-top:16px;
+}	
+
 #login-form {
             margin-left: 38%;
+}
+
+.form-wrapper{
+	margin:auto;
+	max-width:400px;
+	line-height:1.5;
 }
 
 .responsive-image { 

@@ -22,6 +22,7 @@
  *
  */
     include 'accounts/auth.php';
+	include_once('config.php');
 //    include 'variables.php';
 ?>
 

@@ -65,7 +65,7 @@
      * Command that lists the entities of a BRL-CAD database file is 
      * copied into a variable. 
      */
-    $cmd = "$mgedPath -c $uploadPath/$dbFileName ls -a 2>&1";
+    $cmd = "env $mgedPath -c $uploadPath/$dbFileName ls -a 2>&1";
 
     /** Output of command is stored into variable as string. */
     $out = shell_exec($cmd);
