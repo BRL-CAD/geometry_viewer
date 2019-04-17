@@ -25,6 +25,6 @@
     include '../config.php';
 
     /** Connect to the database. */
-    mysql_connect('localhost', $mysqlUsername, $mysqlPassword) or die("Unable to connect to the database, please make sure your MySQL username and / or password is correct!");
+    mysql_connect('localhost', $mysqlUsername, $mysqlPassword) or die("<div class=\"alert alert-danger\">Unable to connect to the database, please make sure your MySQL username and / or password is correct!</div>");
     mysql_select_db($mysqlDatabase) or die("<div id=\"alert-msge\" class=\"alert alert-danger\">Unable to connect to database.</div>");
 ?>

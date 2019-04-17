@@ -29,7 +29,7 @@
     /** Check if the $_GET variables are present. */
     if (empty($_GET['email']) || empty($_GET['key'])) {
 	$status = 'error';
-        echo "We are missing variables. Please double check your email.";
+        echo " <div class\"alert alert-danger\"> We are missing variables. Please double check your email.</div>";
     }
 		
     if ($status != 'error') {

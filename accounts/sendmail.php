@@ -67,7 +67,7 @@
             (email='$email' OR username='$username')");
 
             if (!$query_result) {         
-                echo 'Unable to search database to check whether user already exists';                                     
+                echo '<div class="alert alert-danger"> Unable to search database to check whether user already exists </div>';                                     
             } else if (mysql_num_rows($query_result) != 0) {
                 header('Location: signup.php?userExists=yes');
             } else {
@@ -93,40 +93,44 @@
                     VALUES(NULL,'$userid','$key','$email')");	
 			
 	            if ($confirm) {
-                        /** Swift Mailer Library. */
-                        require_once 'include/swift/swift_required.php';
+                        if (file_exists('include/swift/swift_required.php')){
+                            /** Swift Mailer Library. */
+                            require_once 'include/swift/swift_required.php';
+                            /** Mail Transport */
+                            $transport = Swift_SmtpTransport::newInstance('ssl://smtp.gmail.com', 465)
+                            ->setUsername($senderEmail)
+                            ->setPassword($senderPassword);
+                            
+                            /** Mailer */
+                            $mailer = Swift_Mailer::newInstance($transport);
+                                
+                            /** Create a message. */
+                            $message = Swift_Message::newInstance($newAccountSubject)
+                            ->setFrom(array($senderEmail => $senderName))
+                            ->setTo(array($email => $username))
+                            ->setBody('
+                            Hi '.$username.'!<br><br>
+                            Please click the following link to activate your account:<br><br> 
+                            <a href="'.$siteUrl.'geometry_viewer/accounts/confirm.php?email='.$email.'&key='.$key.'&username='.$username.'"> '.$siteUrl.'geometry_viewer/accounts/confirm.php?email='.$email.'&key='.$key.'&username='.$username.'</a> <br><br>Have a nice day!', 'text/html');
 
-                        /** Mail Transport */
-                        $transport = Swift_SmtpTransport::newInstance('ssl://smtp.gmail.com', 465)
-                        ->setUsername($senderEmail)
-                        ->setPassword($senderPassword);
-
-                        /** Mailer */
-                        $mailer = Swift_Mailer::newInstance($transport);
-
-                        /** Create a message. */
-                        $message = Swift_Message::newInstance($newAccountSubject)
-                        ->setFrom(array($senderEmail => $senderName))
-                        ->setTo(array($email => $username))
-                        ->setBody('
-                        Hi '.$username.'!<br><br>
-                        Please click the following link to activate your account:<br><br> 
-                        <a href="'.$siteUrl.'geometry_viewer/accounts/confirm.php?email='.$email.'&key='.$key.'&username='.$username.'"> '.$siteUrl.'geometry_viewer/accounts/confirm.php?email='.$email.'&key='.$key.'&username='.$username.'</a> <br><br>Have a nice day!', 'text/html');
-
-                        /** Send email. */
-        	        if ($mailer->send($message)) {			
+                            /** Send email. */
+        	           if ($mailer->send($message)) {			
                             echo"<div id=\"alert-msge\" class=\"alert alert-success\">
                                 Thanks for signing up. Please check your email for confirmation!
                                 <div>";	
-        	        } else {
-        		    echo "Could not send confirm email";
-        	        }
-                    } else {
-	                echo "Confirm row was not added to the database. Reason: " . mysql_error();
+        	           } else {
+        		      echo "<div class=\"alert alert-danger \"> Could not send confirm email </div>";
+        	           }
+                    }
+                    else {
+                        echo "<div class=\"alert alert-danger\"> Swift Library is missing </div>";
+                    }
+                } else {
+	                echo " <div class=\"alert alert-danger \"> Confirm row was not added to the database. Reason: " . mysql_error()."</div>";
 	            }
 			
                 } else {
-	            echo "User could not be added to the database. Reason: " . mysql_error();	
+	            echo "<div class=\"alert alert-danger\">User could not be added to the database. Reason: " . mysql_error()."</div>";	
                 }
 	    }
 	}
