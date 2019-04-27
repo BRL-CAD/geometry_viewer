@@ -150,4 +150,23 @@ margin-top: 11px;
         -ms-transform:skew(8deg) rotate(3deg);     
         -o-transform:skew(8deg) rotate(3deg); 
         transform:skew(8deg) rotate(3deg);
-}  
+}
+
+#files-wrapper
+{
+	max-width:900px;
+	margin:auto;
+}
+
+.fm-form 
+{
+	float:left;
+	margin: 20px 20px;
+}
+	   
+
+#file-name
+{
+	min-width:100px;
+	height:100px;
+} 
