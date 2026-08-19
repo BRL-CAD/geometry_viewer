@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
 	<title>BRL-CAD Geometry Viewer</title>
-	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta http-equiv="content-type" content="text/css;charset=utf-8" />
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="keywords" content="" />
@@ -41,7 +41,9 @@
         <link href="accounts/include/style.css" rel="stylesheet" type="text/css"/>
         <link href="css/pace/themes/pace-theme-minimal.css" rel="stylesheet" />
         <script src="js/pace.js"></script>
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+                integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+                crossorigin="anonymous"></script>
         <script src="js/bootstrap.min.js"></script>
 
     </head>
