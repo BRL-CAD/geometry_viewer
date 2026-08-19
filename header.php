@@ -29,7 +29,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
 	<title>BRL-CAD Geometry Viewer</title>
-	<meta http-equiv="content-type" content="text/css;charset=utf-8" />
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="keywords" content="" />
